@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="47953ea5-8054-413d-87d6-a685c3c2e302">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[SELECT item_category,item_name,item_code,total_stock,selling_rate*total_stock as sell_price,purchase_rate*total_stock as purchase_price FROM e_computer.stock s]]>
+	</queryString>
+	<field name="item_category" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="item_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="item_code" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_stock" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="sell_price" class="java.math.BigInteger"/>
+	<field name="purchase_price" class="java.math.BigInteger"/>
+	<variable name="purchase_price_1" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{purchase_price}]]></variableExpression>
+	</variable>
+	<variable name="sell_price_1" class="java.lang.Integer" resetType="Column" calculation="Count">
+		<variableExpression><![CDATA[$F{sell_price}]]></variableExpression>
+	</variable>
+	<variable name="Total Purchase" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{purchase_price}]]></variableExpression>
+	</variable>
+	<variable name="Total Sell" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{sell_price}]]></variableExpression>
+	</variable>
+	<group name="item_category">
+		<groupExpression><![CDATA[$F{item_category}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="152" splitType="Stretch">
+			<staticText>
+				<reportElement x="179" y="0" width="312" height="35" uuid="3c32f89c-23df-4cde-abd5-34784710c4cf"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[E-Computer & Mobile]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="180" y="38" width="313" height="65" uuid="08e1f4ae-18d5-4013-8e14-65ca2aea0546"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Shamimullah Plaza, (1st Floor)
+40/2 Shahid Faruq Road
+Jatrabari, Dhaka-1204
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="444" y="103" width="35" height="22" uuid="92afed11-0ea9-43be-a415-3c6bd347cd8d"/>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="481" y="104" width="91" height="20" uuid="b5242274-d294-41c8-8d67-0d55d518b6e1"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="445" y="126" width="35" height="22" uuid="2bf65345-a466-4d51-8f31-0ff607d06f0a"/>
+				<text><![CDATA[Time:]]></text>
+			</staticText>
+			<textField pattern="h.mm a">
+				<reportElement x="482" y="127" width="92" height="20" uuid="16f5b8f3-809a-4cb4-a6b8-ca3867c28fd0"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="27" splitType="Stretch">
+			<staticText>
+				<reportElement x="-16" y="2" width="77" height="22" uuid="f5f21fd1-6d7a-4837-ab4e-b6f17598b5d2"/>
+				<text><![CDATA[Item Code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="84" y="2" width="100" height="20" uuid="256ddeea-01e8-49f8-a624-e76fe86a7138"/>
+				<text><![CDATA[Item Category]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="194" y="2" width="85" height="20" uuid="9a61a800-ab4a-400a-bb7a-3979f36a9825"/>
+				<text><![CDATA[Item Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="291" y="2" width="74" height="20" uuid="f6223368-51cb-42f4-b209-fc5d90b3db99"/>
+				<text><![CDATA[Total Stock]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="375" y="3" width="100" height="20" uuid="066ba23d-187d-4de0-8a82-94b4d849846b"/>
+				<text><![CDATA[ Purchase Price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="505" y="3" width="57" height="20" uuid="10d20e94-3959-401f-afac-67585fa60bd9"/>
+				<text><![CDATA[Sell Price]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-20" y="24" width="589" height="1" uuid="b978aa9c-08fe-474d-aa61-b213ec03d416"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="-16" y="0" width="81" height="20" uuid="0bcb6c7e-162f-4ec8-a7dd-05f589cf8607"/>
+				<textFieldExpression><![CDATA[$F{item_code}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="83" y="0" width="100" height="20" uuid="c58ed836-12f9-4f87-a0d8-71a178b3bdab"/>
+				<textFieldExpression><![CDATA[$F{item_category}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="196" y="1" width="80" height="17" uuid="fb36c583-3885-4d51-8b33-dfee7af714cc"/>
+				<textFieldExpression><![CDATA[$F{item_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="294" y="1" width="74" height="17" uuid="ce33a1b7-14a4-43fa-9c8e-3a58d90d897b"/>
+				<textFieldExpression><![CDATA[$F{total_stock}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="379" y="1" width="96" height="16" uuid="d0cd504d-8025-4f07-bde9-b249f874a57a"/>
+				<textFieldExpression><![CDATA[$F{purchase_price}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="505" y="1" width="64" height="18" uuid="42693a92-0a87-45a6-99b4-8742d0c19d1b"/>
+				<textFieldExpression><![CDATA[$F{sell_price}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="313" y="3" width="60" height="20" uuid="c2bdf080-14f6-47f5-b39b-b698a6d6577e"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Total Purchase:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="378" y="5" width="59" height="20" uuid="661e214e-9b2b-459e-aea4-43db878c0ceb"/>
+				<textFieldExpression><![CDATA[$V{Total Purchase}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="379" y="3" width="58" height="1" uuid="bdabc5c0-3a56-44a3-b386-93bba1382dc8"/>
+			</line>
+			<line>
+				<reportElement x="494" y="2" width="58" height="1" uuid="aa300ff3-b0bd-4318-b606-39fadde841ee"/>
+			</line>
+			<staticText>
+				<reportElement x="446" y="6" width="60" height="20" uuid="97187284-a8b7-46f3-92ff-31904ff8b21a"/>
+				<textElement>
+					<font size="8"/>
+				</textElement>
+				<text><![CDATA[Total Sell:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="505" y="5" width="42" height="20" uuid="f5e76197-4ba3-4cf3-a6af-27a25c10a254"/>
+				<textFieldExpression><![CDATA[$V{Total Sell}]]></textFieldExpression>
+			</textField>
+		</band>
+	</summary>
+</jasperReport>

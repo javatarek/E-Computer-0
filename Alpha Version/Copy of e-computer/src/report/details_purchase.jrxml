@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="63289e91-57cb-4554-b83c-5941d9d2298d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from purchase_invoice]]>
+	</queryString>
+	<field name="company_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="invoice_no" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="address" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mobile_no" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="item_code" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="item_category" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="item_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="stock" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="quantity" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="purchase_rate" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="selling_rate" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="warranty" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="paid" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="bill_balance" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="commission" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="grand_total" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="brand_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="quantity_1" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{quantity}]]></variableExpression>
+	</variable>
+	<variable name="total_1" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{total}]]></variableExpression>
+	</variable>
+	<group name="item_category">
+		<groupExpression><![CDATA[$F{item_category}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="114" splitType="Stretch">
+			<staticText>
+				<reportElement x="300" y="5" width="312" height="35" uuid="8984ba00-1be5-4155-99a8-d974e134ab85"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[E-Computer & Mobile]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="301" y="44" width="313" height="65" uuid="e5652af8-9e6b-4861-9afc-d7b4e4a14f22"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Shamimullah Plaza, (1st Floor)
+40/2 Shahid Faruq Road, 
+Jatrabari, Dhaka-1204
+]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="702" y="0" width="41" height="20" uuid="200416a3-7581-459c-a764-828ffea273b5"/>
+				<text><![CDATA[Time:]]></text>
+			</staticText>
+			<textField pattern="h.mm a">
+				<reportElement x="743" y="0" width="76" height="20" uuid="737b4f99-71cb-4cca-a9e3-8119ce77f349"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="6" y="2" width="100" height="20" uuid="01a550a9-05ac-43e0-93b9-51c846ee64e5"/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="123" y="2" width="100" height="20" uuid="f2084d27-cc7d-4cd4-9b4a-4954bc359c93"/>
+				<text><![CDATA[Item Category]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="251" y="2" width="100" height="20" uuid="871fcf8d-a336-466c-9e44-81dcdfbb1a3a"/>
+				<text><![CDATA[Item Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="388" y="2" width="100" height="20" uuid="1d0b2172-9bc7-4302-bffc-2d587c6eb1e8"/>
+				<text><![CDATA[Quantity]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="512" y="2" width="100" height="20" uuid="7fc15e66-a89a-417f-a651-696994574003"/>
+				<text><![CDATA[Unit Price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="637" y="2" width="100" height="20" uuid="50df095b-d54e-4204-a854-e9f5bff72dd1"/>
+				<text><![CDATA[Total]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-14" y="24" width="833" height="1" uuid="1116cd0e-2722-44da-8b1a-8221180b88a7"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="19" splitType="Stretch">
+			<textField>
+				<reportElement x="6" y="-1" width="100" height="20" uuid="bc41d05b-aa78-4b16-a35d-663241e8a0ca"/>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="123" y="-1" width="100" height="20" uuid="3614f5d8-e326-4bb8-85c4-a9fb0b58dcef"/>
+				<textFieldExpression><![CDATA[$F{item_category}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="251" y="-1" width="100" height="20" uuid="dc86ea37-3375-4ee7-ad6f-878447b25826"/>
+				<textFieldExpression><![CDATA[$F{item_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="388" y="-1" width="100" height="20" uuid="53cfac54-692f-4efd-bfab-4a3223f25fee"/>
+				<textFieldExpression><![CDATA[$F{quantity}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="512" y="-1" width="100" height="20" uuid="2d37beb2-3e87-4076-bb24-c78c30f85bd2"/>
+				<textFieldExpression><![CDATA[$F{purchase_rate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="637" y="-1" width="100" height="20" uuid="5b0d70c9-8f95-411e-aa79-f4ed3480bf6b"/>
+				<textFieldExpression><![CDATA[$F{total}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<textField>
+				<reportElement x="389" y="5" width="100" height="13" uuid="14e2922c-7332-407f-addb-75db6a44eb6e"/>
+				<textFieldExpression><![CDATA[$V{quantity_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="314" y="6" width="72" height="13" uuid="7a4b348d-138c-4d2a-b28d-764293604e43"/>
+				<text><![CDATA[Total Quantity:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="389" y="2" width="100" height="1" uuid="75d9d927-1c92-4198-9a19-1186ba0b71de"/>
+			</line>
+			<line>
+				<reportElement x="637" y="0" width="100" height="1" uuid="17925386-db7e-46d4-af0f-be2b54ec5cf0"/>
+			</line>
+			<line>
+				<reportElement x="642" y="1" width="100" height="1" uuid="7c2f35f1-d20e-433c-850d-a96edf7d634e"/>
+			</line>
+			<textField>
+				<reportElement x="643" y="3" width="100" height="20" uuid="9d5a22da-035f-4e7a-894b-9ac5d722fd54"/>
+				<textFieldExpression><![CDATA[$V{total_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="551" y="3" width="86" height="20" uuid="47e43b36-f4c7-429a-a78b-63d79841e0c3"/>
+				<text><![CDATA[Total Purchase:]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

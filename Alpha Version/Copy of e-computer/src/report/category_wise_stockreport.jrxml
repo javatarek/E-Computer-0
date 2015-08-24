@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="ae4cb199-ae78-43f2-94af-8e765d13f50d">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from stock]]>
+	</queryString>
+	<field name="total_stock" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="item_category" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="item_code" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="item_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="total_stock_1" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{total_stock}]]></variableExpression>
+	</variable>
+	<group name="item_category">
+		<groupExpression><![CDATA[$F{item_category}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="98" splitType="Stretch">
+			<staticText>
+				<reportElement x="189" y="3" width="253" height="35" uuid="58c63de3-21c9-4bbb-9e27-b8682c3292c3"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[E-Computer & Mobile]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="190" y="38" width="185" height="60" uuid="cccab9b6-c28d-457a-b902-c6cf7fbfe83e"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Shamimullah Plaza, (1st Floor)
+40/2 Shahid Faruq Road, 
+Jatrabari, Dhaka-1204
+]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="52" splitType="Stretch">
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="449" y="5" width="100" height="20" uuid="102ecda7-c636-4df1-a5ad-fd54dd6ebe2a"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="413" y="5" width="29" height="20" uuid="c7f955a1-dfdb-4392-91fe-8f7989b5f4e1"/>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="413" y="28" width="36" height="20" uuid="4a74cc6f-dc5d-4b04-bb58-7824d4bc5dba"/>
+				<text><![CDATA[Time:]]></text>
+			</staticText>
+			<textField pattern="h.mm a">
+				<reportElement x="451" y="28" width="96" height="20" uuid="1fd23560-be6b-4931-9a52-2cc565b0391c"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="26" splitType="Stretch">
+			<staticText>
+				<reportElement x="-13" y="1" width="100" height="20" uuid="2fd7ca97-cd3e-47a4-a258-b2036854e537"/>
+				<text><![CDATA[Item Code]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="110" y="2" width="100" height="20" uuid="0115404d-cb40-42c1-ba4b-9baeffc1bd43"/>
+				<text><![CDATA[Item Category]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="349" y="2" width="100" height="20" uuid="8a7f8e62-3d6f-4536-8722-c5446ad6cf52"/>
+				<text><![CDATA[Total Stcok]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="231" y="2" width="70" height="20" uuid="60677572-d3e8-4a7c-879c-365f38800bb7"/>
+				<text><![CDATA[Item Name]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-13" y="24" width="582" height="1" uuid="1949ef5d-f335-49e2-bf7e-ae4b11fd1c86"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="19" splitType="Stretch">
+			<textField>
+				<reportElement x="-11" y="-1" width="100" height="20" uuid="7b17c18f-2144-433e-af91-ff7240e7c7f5"/>
+				<textFieldExpression><![CDATA[$F{item_code}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="111" y="-1" width="100" height="20" uuid="0543b287-ca28-491a-b702-769e084cb161"/>
+				<textFieldExpression><![CDATA[$F{item_category}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="352" y="-1" width="100" height="20" uuid="857d888b-3ed3-4d3c-affc-067d0b08134c"/>
+				<textFieldExpression><![CDATA[$F{total_stock}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="232" y="-1" width="100" height="20" uuid="9915efeb-b13f-40ed-bc63-3ea31214d9f6"/>
+				<textFieldExpression><![CDATA[$F{item_name}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="284" y="2" width="68" height="20" uuid="794f1ce4-0c4b-4cb5-88cb-afee597ca6d8"/>
+				<text><![CDATA[Total Stock:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="354" y="1" width="100" height="1" uuid="6a2da81a-6ab8-4e1e-bbae-eae3dfd2937c"/>
+			</line>
+			<textField>
+				<reportElement x="355" y="3" width="57" height="20" uuid="f2990fcd-a61e-44c0-9c9c-540db2d40591"/>
+				<textFieldExpression><![CDATA[$V{total_stock_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="419" y="3" width="47" height="20" uuid="07515b82-10a4-4fad-bbca-f00c768796d8"/>
+				<text><![CDATA[PCS]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

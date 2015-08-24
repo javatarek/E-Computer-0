@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="0fbea0b1-cc1c-4dad-b452-b9c6e34edeee">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from sale_invoice]]>
+	</queryString>
+	<field name="customer_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="invoice_no" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="item_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="selling_rate" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="warranty" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="selling_rate_1" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{selling_rate}]]></variableExpression>
+	</variable>
+	<group name="item_name">
+		<groupExpression><![CDATA[$F{item_name}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="102" splitType="Stretch">
+			<staticText>
+				<reportElement x="189" y="4" width="254" height="35" uuid="13a6a701-b4c8-43ee-822f-b867a52bd0f3"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[E-Computer & Mobile]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="188" y="43" width="201" height="59" uuid="ca0d2c92-7a4d-44d3-8bd9-c6244a9cfa43"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Shamimullah Plaza, (1st Floor)
+40/2 Shahid Faruq Road, 
+Jatrabari, Dhaka-1204
+]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<textField pattern="h.mm a">
+				<reportElement x="497" y="0" width="61" height="20" uuid="51a6b851-112e-4ce3-a19b-0f398b684c07"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="456" y="0" width="37" height="20" uuid="d8e571e5-0dd4-4ec3-b700-58cd298c633b"/>
+				<text><![CDATA[Time:]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="29" splitType="Stretch">
+			<staticText>
+				<reportElement x="-16" y="2" width="75" height="20" uuid="d58dcf5d-cf52-4b65-a3e8-ee14acbeb441"/>
+				<text><![CDATA[Invoice No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="294" y="2" width="58" height="20" uuid="eb64b9b3-a153-4c44-9837-f5e446b55909"/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="69" y="2" width="100" height="20" uuid="2ec75c20-aa3e-47b8-a066-45ff6ecd930f"/>
+				<text><![CDATA[Customer Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="184" y="2" width="73" height="20" uuid="85792615-9e59-4e28-80b5-67816cecc878"/>
+				<text><![CDATA[Item Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="372" y="2" width="100" height="20" uuid="5263bd14-7906-4149-b711-68a6465f214f"/>
+				<text><![CDATA[Selling Price]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="497" y="2" width="58" height="20" uuid="98f3a31d-e417-4d03-a423-d8f745e6355c"/>
+				<text><![CDATA[Warranty]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-16" y="23" width="583" height="1" uuid="80f7b9a9-35f0-47ea-a230-abb31c5485b8"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="-9" y="2" width="60" height="20" uuid="d00c6e46-32dd-486e-86fc-76e0e3b9e90a"/>
+				<textFieldExpression><![CDATA[$F{invoice_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="295" y="1" width="72" height="20" uuid="5e4d1f4e-f01d-4c39-9c39-df99789f7e83"/>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="70" y="1" width="75" height="20" uuid="7569d1dc-194b-4548-bb27-a2275c99a8a2"/>
+				<textFieldExpression><![CDATA[$F{customer_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="184" y="1" width="74" height="20" uuid="4d29547e-6465-45cc-82f3-77c990029c89"/>
+				<textFieldExpression><![CDATA[$F{item_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="381" y="1" width="100" height="20" uuid="be6c0929-d71c-4139-aaad-7a1a4ba928a7"/>
+				<textFieldExpression><![CDATA[$F{selling_rate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="500" y="1" width="58" height="20" uuid="f658810b-eb6e-4d2c-acf9-733a7a39ee10"/>
+				<textFieldExpression><![CDATA[$F{warranty}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<staticText>
+				<reportElement x="311" y="0" width="61" height="20" uuid="25b4b804-082b-486f-90e2-da23c7c46327"/>
+				<text><![CDATA[Total Price:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="379" y="3" width="100" height="20" uuid="0dc3e6a1-0829-41ce-b955-a5fcfabdf814"/>
+				<textFieldExpression><![CDATA[$V{selling_rate_1}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="379" y="1" width="102" height="1" uuid="87c8036b-285e-4029-8052-1a96ef2cede1"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>

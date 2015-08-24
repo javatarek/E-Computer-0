@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="595" pageHeight="842" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1e328195-e6f7-4360-9cda-03ce7100a431">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from customer_payment]]>
+	</queryString>
+	<field name="sn" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="customer_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="amount" class="java.lang.Double">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="payment_method" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mobile_no" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="notes" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="amount_1" class="java.lang.Double" calculation="Sum">
+		<variableExpression><![CDATA[$F{amount}]]></variableExpression>
+	</variable>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="103" splitType="Stretch">
+			<staticText>
+				<reportElement x="191" y="3" width="312" height="35" uuid="29888db3-f6bb-4edc-aca0-8d7a95f857fe"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[E-Computer & Mobile]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="191" y="40" width="313" height="50" uuid="018eeb3b-a6f3-413d-a838-7e3ddedb4d67"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Shamimullah Plaza, (1st Floor)
+40/2 Shahid Faruq Road, 
+Jatrabari, Dhaka-1204
+]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="45" splitType="Stretch">
+			<staticText>
+				<reportElement x="454" y="22" width="32" height="20" uuid="4e045829-1376-45b8-a116-f550e8d02d2b"/>
+				<text><![CDATA[Date:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="487" y="23" width="69" height="20" uuid="c3b92a3e-c676-4302-8dd7-acfa934be940"/>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="453" y="-1" width="32" height="20" uuid="c7b4bce0-f40a-433d-a399-a9cd9ec6a063"/>
+				<text><![CDATA[Time:]]></text>
+			</staticText>
+			<textField pattern="h.mm a">
+				<reportElement x="487" y="0" width="65" height="20" uuid="47f42280-7e17-44f9-9c63-017c75575061"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="23" splitType="Stretch">
+			<staticText>
+				<reportElement x="1" y="1" width="100" height="20" uuid="6b6c69a4-9209-49d0-baeb-7f5dd142be31"/>
+				<text><![CDATA[Customer Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="111" y="1" width="100" height="20" uuid="d9d2b7a7-27ff-490e-aa92-35e19b578e4f"/>
+				<text><![CDATA[Mobile No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="227" y="1" width="100" height="20" uuid="40b9ee39-2945-4d41-8d46-d0888c794fd9"/>
+				<text><![CDATA[Payment Method]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="342" y="1" width="100" height="20" uuid="d5b11b72-5c86-42c4-8435-0e6b90122d00"/>
+				<text><![CDATA[Amount]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="463" y="1" width="100" height="20" uuid="77a40c39-28dd-4909-bf95-6218eb054575"/>
+				<text><![CDATA[Notes]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-6" y="22" width="584" height="1" uuid="ed14ae79-fdb8-4c6b-a3b2-d366e89082f1"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="20" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="0" width="100" height="20" uuid="91d62b89-22d0-4e45-bdc8-cf12e649b0a2"/>
+				<textFieldExpression><![CDATA[$F{customer_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="113" y="0" width="100" height="20" uuid="08d797ab-d8f2-40b8-87a9-b01fa58eb2e1"/>
+				<textFieldExpression><![CDATA[$F{mobile_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="229" y="0" width="100" height="20" uuid="dab87309-4554-4fb9-a7d2-f262afd73d2f"/>
+				<textFieldExpression><![CDATA[$F{payment_method}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="343" y="0" width="100" height="20" uuid="ac749321-94a7-48b5-91c0-e802d7ef0462"/>
+				<textFieldExpression><![CDATA[$F{amount}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="463" y="0" width="100" height="20" uuid="d030c44c-cd01-4537-98e0-e51202d0285f"/>
+				<textFieldExpression><![CDATA[$F{notes}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<line>
+				<reportElement x="343" y="2" width="80" height="1" uuid="6bfca1b5-e3a8-4e31-a1b9-afdeb698d909"/>
+			</line>
+			<staticText>
+				<reportElement x="264" y="1" width="75" height="20" uuid="d48714a2-81c1-468c-89c8-66c68a289fb8"/>
+				<text><![CDATA[Total Amount:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="344" y="4" width="67" height="20" uuid="9fe590fa-376d-41c0-8c03-762a0ddd2cb6"/>
+				<textFieldExpression><![CDATA[$V{amount_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="410" y="4" width="20" height="20" uuid="ee9aa6d1-9663-40f7-95a5-2f615a64f0f7"/>
+				<text><![CDATA[taka]]></text>
+			</staticText>
+		</band>
+	</summary>
+</jasperReport>

@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="3fd5a4db-8457-4a5a-a423-e36af8981045">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from sale_invoice]]>
+	</queryString>
+	<field name="customer_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="invoice_no" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="mobile_no" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="address" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="date" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="item_name" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="item_category" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="stock" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="quantity" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="selling_rate" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="purchase_rate" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="warranty" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="discount" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="paid" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="grand_total" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="profit" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="total_purchase" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<variable name="total_purchase_1" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{total_purchase}]]></variableExpression>
+	</variable>
+	<variable name="paid_1" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{paid}]]></variableExpression>
+	</variable>
+	<variable name="profit_1" class="java.lang.Integer" calculation="Sum">
+		<variableExpression><![CDATA[$F{profit}]]></variableExpression>
+	</variable>
+	<group name="date">
+		<groupExpression><![CDATA[$F{date}]]></groupExpression>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="109" splitType="Stretch">
+			<staticText>
+				<reportElement x="257" y="3" width="312" height="44" uuid="e51a006c-c002-475e-b2d0-85dc0abfffa5"/>
+				<textElement>
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[E-Computer & Mobile]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="259" y="48" width="313" height="51" uuid="93ec448f-648f-4dcd-9543-41866cfa8943"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<text><![CDATA[Shamimullah Plaza, (1st Floor)
+40/2 Shahid Faruq Road, 
+Jatrabari, Dhaka-1204
+]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch">
+			<staticText>
+				<reportElement x="682" y="0" width="43" height="20" uuid="ab7cd5e3-b0cb-4348-81f8-23489500ec0b"/>
+				<text><![CDATA[Time:]]></text>
+			</staticText>
+			<textField pattern="h.mm a">
+				<reportElement x="732" y="0" width="82" height="20" uuid="edc8af4f-543d-48a8-8cd2-17eab955d6d5"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="25" splitType="Stretch">
+			<staticText>
+				<reportElement x="-14" y="2" width="40" height="20" uuid="8749b0ad-cf2e-4cae-9841-2aad49508b4a"/>
+				<text><![CDATA[Date]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="53" y="2" width="73" height="20" uuid="65170f41-dffd-415e-9940-c02ea933b235"/>
+				<text><![CDATA[Invoice No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="142" y="2" width="81" height="20" uuid="63f6b1ce-34b5-4baa-ac8f-03d20565108b"/>
+				<text><![CDATA[Customer Name]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="254" y="2" width="71" height="20" uuid="1057a74c-282a-4f1c-9b86-6472c458b31f"/>
+				<text><![CDATA[Mobile No]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="338" y="2" width="100" height="20" uuid="37d76a76-7077-4842-9eb5-258abcb88c9d"/>
+				<text><![CDATA[Total Purchase]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="492" y="2" width="100" height="20" uuid="4fc1323a-d380-4046-a232-eb79538f3da4"/>
+				<text><![CDATA[Paid]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="654" y="2" width="100" height="20" uuid="9c568e67-15d0-4c18-a5e8-6a3517a8cdf6"/>
+				<text><![CDATA[Profit]]></text>
+			</staticText>
+			<line>
+				<reportElement x="-20" y="24" width="841" height="1" uuid="ec28c59b-8039-4068-9d55-0772bf91d6a9"/>
+			</line>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="22" splitType="Stretch">
+			<textField>
+				<reportElement x="-13" y="1" width="52" height="20" uuid="55e51377-8fbb-41fe-8b09-641dd05f0fac"/>
+				<textFieldExpression><![CDATA[$F{date}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="54" y="0" width="67" height="20" uuid="cf0a814d-4e1e-4dcd-a549-df99bd39229a"/>
+				<textFieldExpression><![CDATA[$F{invoice_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="143" y="0" width="81" height="20" uuid="23c0126a-f1b6-44ce-9d38-5afc880b21da"/>
+				<textFieldExpression><![CDATA[$F{customer_name}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="255" y="0" width="69" height="20" uuid="46c7d488-7f8e-424d-be2c-a4bbb51907d4"/>
+				<textFieldExpression><![CDATA[$F{mobile_no}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="337" y="2" width="100" height="20" uuid="51407b86-df3a-48eb-8ea8-bc725f356fa3"/>
+				<textFieldExpression><![CDATA[$F{total_purchase}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="491" y="2" width="100" height="20" uuid="e0b52379-033d-4145-bfbd-e8c943797db9"/>
+				<textFieldExpression><![CDATA[$F{paid}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="657" y="1" width="100" height="20" uuid="9d56f9f6-566d-464e-91ea-6fd96ec961de"/>
+				<textFieldExpression><![CDATA[$F{profit}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<summary>
+		<band height="42" splitType="Stretch">
+			<line>
+				<reportElement x="337" y="1" width="98" height="1" uuid="debd69d1-da1d-42fe-947c-f0909922298b"/>
+			</line>
+			<line>
+				<reportElement x="657" y="1" width="98" height="1" uuid="336c180b-1351-4ae5-ba1c-22934edb4849"/>
+			</line>
+			<staticText>
+				<reportElement x="263" y="4" width="76" height="20" uuid="fe3d7edb-b95a-474c-9204-152f8f195ee9"/>
+				<text><![CDATA[Total Purchase:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="341" y="4" width="46" height="20" uuid="e4801623-afc2-407a-8ed9-f71b3d3413b5"/>
+				<textFieldExpression><![CDATA[$V{total_purchase_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="420" y="4" width="60" height="20" uuid="d2df1e7e-97de-4c3f-a261-b1bc2288c78e"/>
+				<text><![CDATA[Total Paid:]]></text>
+			</staticText>
+			<textField>
+				<reportElement x="490" y="3" width="50" height="20" uuid="160a5ad2-3d2a-41f9-9297-295bdf0aca76"/>
+				<textFieldExpression><![CDATA[$V{paid_1}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="659" y="3" width="56" height="20" uuid="742a05cd-1956-4ea7-8c78-a043617a0257"/>
+				<textFieldExpression><![CDATA[$V{profit_1}]]></textFieldExpression>
+			</textField>
+			<staticText>
+				<reportElement x="591" y="5" width="60" height="20" uuid="87e0f589-2ab6-4ea7-bb5f-f4d26d998af0"/>
+				<text><![CDATA[Total Profit:]]></text>
+			</staticText>
+			<line>
+				<reportElement x="493" y="1" width="98" height="1" uuid="b3ed7805-5eb5-4956-ba02-16b1c18fcd7c"/>
+			</line>
+		</band>
+	</summary>
+</jasperReport>
